@@ -1,4 +1,5 @@
 from solid import LibraryManager, SearchableLibrary
+import logging
 
 def main():
     library = SearchableLibrary()
@@ -23,7 +24,7 @@ def main():
         elif command == "exit":
             break
         else:
-            print("Invalid command. Please try again.")
+            logging.warning("Invalid command. Please try again.")
 
 
 if __name__ == "__main__":

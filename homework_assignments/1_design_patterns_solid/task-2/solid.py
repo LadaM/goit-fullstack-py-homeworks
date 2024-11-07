@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+import logging
 
 class LibraryInterface(ABC):
     @abstractmethod
@@ -40,7 +40,7 @@ class SearchableLibrary(Library):
         for book in self.books:
             if book.title == title:
                 return book
-        print("Book not found")
+        logging.info("Book not found")
         return None
 
 
@@ -63,7 +63,7 @@ class LibraryManager:
             if book:
                 print(f"Found: {book}")
         else:
-            print("Find book functionality is not supported in this library")
+            logging.info("Find book functionality is not supported in this library")
 
 
 class Book:
